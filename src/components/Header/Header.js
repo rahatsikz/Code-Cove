@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../context/UserContext";
 import logo from "../../images/logo.png";
 import "./Header.css";
 
 const Header = () => {
   const [isToggleOpen, setIsToggleOpen] = useState(false);
+  const { user } = useContext(AuthContext);
   return (
     <header className="border-b-1 relative z-20 w-full border-b border-slate-200 bg-white/90 shadow-lg shadow-slate-700/5 after:absolute after:top-full after:left-0 after:z-10 after:block after:h-px after:w-full after:bg-slate-200 lg:border-slate-200 lg:backdrop-blur-sm lg:after:hidden">
       <div className="relative mx-auto max-w-full px-6 lg:max-w-5xl xl:max-w-7xl 2xl:max-w-[96rem]">
@@ -95,6 +97,7 @@ const Header = () => {
                 <span>FAQ</span>
               </NavLink>
             </li>
+
             <li role="none" className="flex items-stretch">
               <NavLink
                 role="menuitem"
@@ -107,6 +110,17 @@ const Header = () => {
               </NavLink>
             </li>
             <li role="none" className="flex items-stretch">
+              <NavLink
+                role="menuitem"
+                aria-haspopup="false"
+                tabIndex="0"
+                className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-sky-500 focus:bg-sky-50 focus:outline-none focus-visible:outline-none lg:px-8"
+                to="/login"
+              >
+                <span>Login</span>
+              </NavLink>
+            </li>
+            <li role="none" className="flex items-stretch">
               <div
                 role="menuitem"
                 aria-haspopup="false"
@@ -115,7 +129,7 @@ const Header = () => {
               >
                 <div className="relative flex flex-wrap items-center">
                   <input
-                    className="peer relative h-6 w-12 cursor-pointer appearance-none rounded-xl bg-slate-300 transition-colors after:absolute after:top-0 after:left-0 after:h-6 after:w-6 after:rounded-full after:bg-slate-500 after:transition-all checked:bg-emerald-200 checked:after:left-6 checked:after:bg-emerald-500 hover:bg-slate-400 after:hover:bg-slate-600 checked:hover:bg-emerald-300 checked:after:hover:bg-emerald-600 focus:outline-none checked:focus:bg-emerald-400 checked:after:focus:bg-emerald-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:bg-slate-200 disabled:after:bg-slate-300"
+                    className="peer relative h-6 w-12 cursor-pointer appearance-none rounded-xl bg-slate-300 transition-colors after:absolute after:top-0 after:left-0 after:h-6 after:w-6 after:rounded-full after:bg-slate-500 after:transition-all checked:bg-sky-200 checked:after:left-6 checked:after:bg-sky-500 hover:bg-slate-400 after:hover:bg-slate-600 checked:hover:bg-sky-300 checked:after:hover:bg-sky-600 focus:outline-none checked:focus:bg-sky-400 checked:after:focus:bg-sky-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:bg-slate-200 disabled:after:bg-slate-300"
                     type="checkbox"
                     value=""
                     id="id-c06"
@@ -133,7 +147,7 @@ const Header = () => {
               <img
                 src="https://i.pravatar.cc/40?img=35"
                 alt="user name"
-                title="user name"
+                title={user?.displayName}
                 width="40"
                 height="40"
                 className="max-w-full rounded-full"
