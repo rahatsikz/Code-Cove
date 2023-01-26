@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -17,9 +18,12 @@ const Home = () => {
             have the knowledge and skills you need to succeed in today's
             competitive world
           </p>
-          <button className="inline-flex h-12 items-center justify-center gap-2 whitespace-nowrap rounded-full bg-cyan-500 px-6 text-sm font-medium tracking-wide text-white shadow-lg shadow-cyan-200 transition duration-300 hover:bg-cyan-600 hover:shadow-md hover:shadow-cyan-200 focus:bg-cyan-700 focus:shadow-md focus:shadow-cyan-200 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-cyan-300 disabled:bg-cyan-300 disabled:shadow-none">
-            <span>Get The Course</span>
-          </button>
+
+          <Link to="/courses">
+            <button className="inline-flex h-12 items-center justify-center gap-2 whitespace-nowrap rounded-full bg-cyan-500 px-6 text-sm font-medium tracking-wide text-white shadow-lg shadow-cyan-200 transition duration-300 hover:bg-cyan-600 hover:shadow-md hover:shadow-cyan-200 focus:bg-cyan-700 focus:shadow-md focus:shadow-cyan-200 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-cyan-300 disabled:bg-cyan-300 disabled:shadow-none">
+              <span>Get The Course</span>
+            </button>
+          </Link>
         </div>
       </div>
     </div>
