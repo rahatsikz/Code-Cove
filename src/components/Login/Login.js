@@ -3,12 +3,15 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGithub } from "react-icons/fa";
 import "./Login.css";
 import { AuthContext } from "../../context/UserContext";
+import { toast } from "react-hot-toast";
 
 const Login = () => {
-  const { signIn, googleLogin, githubLogin } = useContext(AuthContext);
+  const { signIn, googleLogin, githubLogin, resetPassword } =
+    useContext(AuthContext);
 
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
+  const [resetEmail, setResetEmail] = useState("");
 
   const [showPassword, setShowPassword] = useState(false);
 
@@ -62,10 +65,27 @@ const Login = () => {
       .catch((error) => console.error(error));
   };
 
+  const handleReset = () => {
+    resetPassword(resetEmail)
+      .then(() => {
+        toast.success("Password reset email sent");
+      })
+      .catch((error) => {
+        console.error(error);
+        setError(error.message);
+      });
+  };
+
+  const handleEmail = (e) => {
+    const email = e.target.value;
+    console.log(email);
+    setResetEmail(email);
+  };
+
   return (
     <div className="bg-gray-50 min-h-[90.8vh] flex items-center justify-center">
       <div className="bg-gray-100 flex rounded-2xl shadow-lg max-w-4xl p-5 items-center">
-        <div className="md:w-1/2 px-8 md:px-16">
+        <div className="md:w-1/2 px-8 md:px-16 text-center">
           <h2 className="font-bold text-2xl text-[#002D74]">Login</h2>
           <p className="text-xs mt-4 text-[#002D74]">
             If you are already a member, easily log in
@@ -73,6 +93,7 @@ const Login = () => {
 
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             <input
+              onBlur={handleEmail}
               className="p-2 mt-8 rounded-xl border"
               type="email"
               name="email"
@@ -189,7 +210,12 @@ const Login = () => {
           </button>
 
           <div className="mt-5 text-xs border-b border-[#002D74] py-4 text-[#002D74]">
-            <Link to="/">Forgot your password?</Link>
+            <button
+              onClick={handleReset}
+              className="inline-flex items-center justify-center h-10 gap-2 px-5 text-sm font-medium tracking-wide transition duration-300 rounded focus-visible:outline-none justify-self-center whitespace-nowrap  hover:bg-sky-50 hover:text-sky-600 focus:bg-sky-100 focus:text-sky-700 disabled:cursor-not-allowed disabled:text-sky-300 disabled:shadow-none disabled:hover:bg-transparent"
+            >
+              <span>Forgot your password?</span>
+            </button>
           </div>
 
           <div className="mt-3 text-xs flex justify-between items-center text-[#002D74]">

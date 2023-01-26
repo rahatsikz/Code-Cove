@@ -68,7 +68,7 @@ const Register = () => {
           />
         </div>
 
-        <div className="md:w-1/2 px-8 md:px-16">
+        <div className="md:w-1/2 px-8 md:px-16 text-center">
           <h2 className="font-bold text-2xl text-[#002D74]">Sign Up</h2>
           <p className="text-xs mt-4 text-[#002D74]">
             Sign up now to access exclusive features and content!
