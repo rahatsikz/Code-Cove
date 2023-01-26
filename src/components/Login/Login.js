@@ -3,10 +3,9 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGithub } from "react-icons/fa";
 import "./Login.css";
 import { AuthContext } from "../../context/UserContext";
-import { toast } from "react-hot-toast";
 
 const Login = () => {
-  const { signIn } = useContext(AuthContext);
+  const { signIn, googleLogin, githubLogin } = useContext(AuthContext);
 
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
@@ -32,11 +31,7 @@ const Login = () => {
         const user = result.user;
         console.log(user);
         // setSuccess("signed in successfully");
-        if (user.emailVerified) {
-          navigate(from, { replace: true });
-        } else {
-          toast.error("Email is not verified");
-        }
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.error(error);
@@ -44,18 +39,28 @@ const Login = () => {
       });
   };
 
-  // const handleGoogle = () => {
-  //   googleLogin()
-  //     .then((result) => {
-  //       const user = result.user;
-  //       console.log(user);
-  //       setSuccess("signed in successfully");
-  //       navigate(from, { replace: true });
-  //     })
-  //     .catch((error) => {
-  //       console.error(error);
-  //     });
-  // };
+  const handleGoogle = () => {
+    googleLogin()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        // setSuccess("signed in successfully");
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+  const handleGithub = () => {
+    githubLogin()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        navigate(from, { replace: true });
+      })
+      .catch((error) => console.error(error));
+  };
 
   return (
     <div className="bg-gray-50 min-h-[90.8vh] flex items-center justify-center">
@@ -147,7 +152,7 @@ const Login = () => {
           </div>
 
           <button
-            // onClick={handleGoogle}
+            onClick={handleGoogle}
             className="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105  text-[#002D74]"
           >
             <svg
@@ -175,7 +180,10 @@ const Login = () => {
             </svg>
             Login with Google
           </button>
-          <button className="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105  text-[#002D74]">
+          <button
+            onClick={handleGithub}
+            className="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105  text-[#002D74]"
+          >
             <FaGithub className="mr-3 text-2xl" />
             Login with Github
           </button>
