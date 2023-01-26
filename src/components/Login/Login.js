@@ -1,14 +1,15 @@
-import React, { useState } from "react";
-// import { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGithub } from "react-icons/fa";
 import "./Login.css";
-// import { AuthContext } from "../../contexts/UserContext";
-// import "./Login.css";
+import { AuthContext } from "../../context/UserContext";
+import { toast } from "react-hot-toast";
 
 const Login = () => {
-  // const { signIn, googleLogin } = useContext(AuthContext);
+  const { signIn } = useContext(AuthContext);
+
   const [success, setSuccess] = useState("");
+  const [error, setError] = useState("");
 
   const [showPassword, setShowPassword] = useState(false);
 
@@ -19,22 +20,28 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setSuccess("");
+    setError("");
 
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
 
     console.log(email, password);
-    // signIn(email, password)
-    //   .then((result) => {
-    //     const user = result.user;
-    //     console.log(user);
-    //     setSuccess("signed in successfully");
-    //     navigate(from, { replace: true });
-    //   })
-    //   .catch((error) => {
-    //     console.error(error);
-    //   });
+    signIn(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        // setSuccess("signed in successfully");
+        if (user.emailVerified) {
+          navigate(from, { replace: true });
+        } else {
+          toast.error("Email is not verified");
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+        setError(error.message);
+      });
   };
 
   // const handleGoogle = () => {
@@ -131,6 +138,7 @@ const Login = () => {
             </button>
           </form>
           <p className="text-center text-green-600 mt-4">{success}</p>
+          <p className="text-center text-red-400 mt-4">{error}</p>
 
           <div className="mt-6 grid grid-cols-3 items-center text-gray-400">
             <hr className="border-gray-400" />

@@ -6,7 +6,15 @@ import "./Header.css";
 
 const Header = () => {
   const [isToggleOpen, setIsToggleOpen] = useState(false);
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
+  // console.log(user);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.error(error));
+  };
+
   return (
     <header className="border-b-1 relative z-20 w-full border-b border-slate-200 bg-white/90 shadow-lg shadow-slate-700/5 after:absolute after:top-full after:left-0 after:z-10 after:block after:h-px after:w-full after:bg-slate-200 lg:border-slate-200 lg:backdrop-blur-sm lg:after:hidden">
       <div className="relative mx-auto max-w-full px-6 lg:max-w-5xl xl:max-w-7xl 2xl:max-w-[96rem]">
@@ -110,15 +118,26 @@ const Header = () => {
               </NavLink>
             </li>
             <li role="none" className="flex items-stretch">
-              <NavLink
-                role="menuitem"
-                aria-haspopup="false"
-                tabIndex="0"
-                className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-sky-500 focus:bg-sky-50 focus:outline-none focus-visible:outline-none lg:px-8"
-                to="/login"
-              >
-                <span>Login</span>
-              </NavLink>
+              {user?.uid ? (
+                <>
+                  <button
+                    onClick={handleLogOut}
+                    className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-sky-500 focus:bg-sky-50 focus:outline-none focus-visible:outline-none lg:px-8"
+                  >
+                    <span>Log out</span>
+                  </button>
+                </>
+              ) : (
+                <NavLink
+                  role="menuitem"
+                  aria-haspopup="false"
+                  tabIndex="0"
+                  className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-sky-500 focus:bg-sky-50 focus:outline-none focus-visible:outline-none lg:px-8"
+                  to="/login"
+                >
+                  <span>Login</span>
+                </NavLink>
+              )}
             </li>
             <li role="none" className="flex items-stretch">
               <div
@@ -140,22 +159,28 @@ const Header = () => {
           </ul>
           <div className="ml-auto flex items-center px-6 lg:ml-0 lg:p-0">
             {/*        <!-- Avatar --> */}
-            <Link
-              to="/"
-              className="relative inline-flex h-10 w-10 items-center justify-center rounded-full text-white"
-            >
-              <img
-                src="https://i.pravatar.cc/40?img=35"
-                alt="user name"
-                title={user?.displayName}
-                width="40"
-                height="40"
-                className="max-w-full rounded-full"
-              />
-              <span className="absolute bottom-0 right-0 inline-flex items-center justify-center gap-1 rounded-full border-2 border-white bg-pink-500 p-1 text-sm text-white">
-                <span className="sr-only"> 7 new emails </span>
-              </span>
-            </Link>
+
+            {user?.uid ? (
+              <Link
+                to="/"
+                className="relative inline-flex h-10 w-10 items-center justify-center rounded-full text-white"
+              >
+                <img
+                  src={user?.photoURL}
+                  alt="user name"
+                  title={user?.displayName}
+                  width="40"
+                  height="40"
+                  className="max-w-full rounded-full"
+                />
+                <span className="absolute bottom-0 right-0 inline-flex items-center justify-center gap-1 rounded-full border-2 border-white bg-pink-500 p-1 text-sm text-white">
+                  <span className="sr-only"> 7 new emails </span>
+                </span>
+              </Link>
+            ) : (
+              <></>
+            )}
+
             {/*        <!-- End Avatar --> */}
           </div>
         </nav>
