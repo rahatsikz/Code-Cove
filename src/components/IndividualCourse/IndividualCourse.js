@@ -1,8 +1,13 @@
 import React from "react";
 import { FaStar, FaFileAlt, FaUserGraduate } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const IndividualCourse = ({ course }) => {
-  const { name, price, image, description, lessons, students } = course;
+  const { name, price, image, description, lessons, students, id } = course;
+  const navigate = useNavigate();
+  const handleDetails = () => {
+    navigate(`/details/${id}`);
+  };
   return (
     <div className="flex flex-col overflow-hidden bg-white rounded shadow-md text-slate-500 shadow-slate-200 sm:flex-row my-4">
       {/*  <!-- Image --> */}
@@ -45,7 +50,10 @@ const IndividualCourse = ({ course }) => {
             </div>
           </div>
           <div className="mt-2">
-            <button className="inline-flex h-10 items-center justify-center gap-2 justify-self-center whitespace-nowrap rounded-full bg-sky-50 px-5 text-sm font-medium tracking-wide text-sky-500 shadow-md shadow-sky-100 transition duration-300 hover:bg-sky-100 hover:text-sky-600 hover:shadow-md hover:shadow-sky-100 focus:bg-sky-200 focus:text-sky-700 focus:shadow-md focus:shadow-sky-100 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-sky-100 disabled:bg-sky-100 disabled:shadow-none">
+            <button
+              onClick={handleDetails}
+              className="inline-flex h-10 items-center justify-center gap-2 justify-self-center whitespace-nowrap rounded-full bg-sky-50 px-5 text-sm font-medium tracking-wide text-sky-500 shadow-md shadow-sky-100 transition duration-300 hover:bg-sky-100 hover:text-sky-600 hover:shadow-md hover:shadow-sky-100 focus:bg-sky-200 focus:text-sky-700 focus:shadow-md focus:shadow-sky-100 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-sky-100 disabled:bg-sky-100 disabled:shadow-none"
+            >
               <span>Course Details</span>
             </button>
           </div>

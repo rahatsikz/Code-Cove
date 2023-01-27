@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import IndividualCourse from "../IndividualCourse/IndividualCourse";
 
 const Courses = () => {
@@ -62,6 +62,21 @@ const Courses = () => {
               />
               <span className="label-text ml-2">Advanced</span>
             </label>
+          </div>
+        </div>
+
+        <div className="bg-sky-50 text-center my-8 rounded-lg">
+          <h3 className="text-xl font-semibold mb-4 pt-4 text-center">
+            Go to Course details of:
+          </h3>
+          <div className="pl-8 pb-8">
+            {allCourses.map((course) => (
+              <Link key={course.id} to={`/details/${course.id}`}>
+                <button className=" block items-center justify-center h-10 gap-2 px-5 text-sm font-medium tracking-wide transition duration-300 rounded focus-visible:outline-none justify-self-center whitespace-nowrap text-sky-500 hover:bg-sky-100 hover:text-sky-600 focus:bg-sky-100 focus:text-sky-700 disabled:cursor-not-allowed disabled:text-sky-300 disabled:shadow-none disabled:hover:bg-transparent">
+                  <span> {course.name} </span>
+                </button>
+              </Link>
+            ))}
           </div>
         </div>
       </div>
