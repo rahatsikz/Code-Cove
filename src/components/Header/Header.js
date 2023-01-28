@@ -31,7 +31,8 @@ const Header = () => {
             className="flex items-center whitespace-nowrap mt-2 py-3 focus:outline-none lg:flex-1 text-sky-400 text-xl"
             to="/"
           >
-            <img src={logo} alt="" width="100px" /> CodeCove
+            <img src={logo} alt="" width="100px" />
+            <span className="mb-2">CodeCove</span>
           </Link>
           {/*      <!-- Mobile trigger --> */}
           <button
