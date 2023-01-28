@@ -25,8 +25,6 @@ const Header = () => {
         >
           {/*      <!-- Brand logo --> */}
           <Link
-            id="WindUI"
-            aria-label="WindUI logo"
             aria-current="page"
             className="flex items-center whitespace-nowrap mt-2 py-3 focus:outline-none lg:flex-1 text-sky-400 text-xl"
             to="/"
