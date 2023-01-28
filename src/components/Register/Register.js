@@ -34,6 +34,7 @@ const Register = () => {
         handleProfile(fname, photo);
         handeVerify();
         toast.success("Verification email sent");
+        form.reset();
       })
       .catch((error) => {
         console.error(error);
