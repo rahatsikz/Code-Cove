@@ -15,7 +15,7 @@ const Checkout = () => {
     <div className="container w-1/2 m-auto">
       <p className="text-2xl my-8 text-center font-bold">Order summary:</p>
       <div className=" ">
-        <div className="flex flex-col overflow-hidden bg-white rounded shadow-md text-slate-500 shadow-slate-200 sm:flex-row w-5/6 mx-auto">
+        <div className="flex flex-col overflow-hidden bg-white rounded-xl shadow-md text-slate-500 shadow-slate-200 sm:flex-row w-5/6 mx-auto">
           {/*  <!-- Image --> */}
           <figure className="flex-1">
             <img
