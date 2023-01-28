@@ -5,12 +5,26 @@ import {
   FaMoneyBillAlt,
   FaRegFileAlt,
 } from "react-icons/fa";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 
 const CourseDetails = () => {
   const detailsData = useLoaderData();
-  const { name, image, description, learnings, price, lessons, instructor } =
-    detailsData;
+  const {
+    name,
+    image,
+    description,
+    learnings,
+    price,
+    lessons,
+    instructor,
+    id,
+  } = detailsData;
+
+  const navigate = useNavigate();
+
+  const handleAccess = () => {
+    navigate(`/checkout/${id}`);
+  };
   return (
     <div>
       <div
@@ -70,7 +84,10 @@ const CourseDetails = () => {
               </div>
             </div>
             <div className="text-center my-8">
-              <button className="inline-flex h-10 items-center justify-center gap-2 whitespace-nowrap rounded border border-sky-500 px-5 text-sm font-medium tracking-wide text-sky-500 shadow-md shadow-sky-200 transition duration-300 hover:border-sky-600 hover:text-sky-600 hover:shadow-sm hover:shadow-sky-200 focus:border-sky-700 focus:text-sky-700 focus:shadow-sm focus:shadow-sky-200 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-sky-300 disabled:text-sky-300 disabled:shadow-none">
+              <button
+                onClick={handleAccess}
+                className="inline-flex h-10 items-center justify-center gap-2 whitespace-nowrap rounded border border-sky-500 px-5 text-sm font-medium tracking-wide text-sky-500 shadow-md shadow-sky-200 transition duration-300 hover:border-sky-600 hover:text-sky-600 hover:shadow-sm hover:shadow-sky-200 focus:border-sky-700 focus:text-sky-700 focus:shadow-sm focus:shadow-sky-200 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-sky-300 disabled:text-sky-300 disabled:shadow-none"
+              >
                 <span>Get Premium Access</span>
               </button>
             </div>
