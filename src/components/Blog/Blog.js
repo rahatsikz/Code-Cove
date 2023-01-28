@@ -6,7 +6,7 @@ const Blog = () => {
       <h2 className="text-center text-2xl font-bold my-8">Blogs</h2>
       <div className="w-2/3 mx-auto divide-y rounded divide-slate-200 ">
         <details className="p-4 group" open>
-          <summary className="relative cursor-pointer list-none pr-8 font-medium text-slate-700 transition-colors duration-300 focus-visible:outline-none group-hover:text-slate-900  [&::-webkit-details-marker]:hidden">
+          <summary className="relative cursor-pointer list-none pr-8 font-medium text-slate-700 transition-colors duration-300 focus-visible:outline-none dark:text-white  [&::-webkit-details-marker]:hidden">
             What is CORS ?
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +37,7 @@ const Blog = () => {
           </p>
         </details>
         <details className="p-4 group">
-          <summary className="relative cursor-pointer list-none pr-8 font-medium text-slate-700 transition-colors duration-300 focus-visible:outline-none group-hover:text-slate-900  [&::-webkit-details-marker]:hidden">
+          <summary className="relative cursor-pointer list-none pr-8 font-medium text-slate-700 transition-colors duration-300 focus-visible:outline-none dark:text-white  [&::-webkit-details-marker]:hidden">
             Why are you using firebase? What other options do you have to
             implement authentication?
             <svg
@@ -70,7 +70,7 @@ const Blog = () => {
           </p>
         </details>
         <details className="p-4 group">
-          <summary className="relative cursor-pointer list-none pr-8 font-medium text-slate-700 transition-colors duration-300 focus-visible:outline-none group-hover:text-slate-900  [&::-webkit-details-marker]:hidden">
+          <summary className="relative cursor-pointer list-none pr-8 font-medium text-slate-700 transition-colors duration-300 focus-visible:outline-none dark:text-white  [&::-webkit-details-marker]:hidden">
             How does the private route work?
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -100,7 +100,7 @@ const Blog = () => {
           </p>
         </details>
         <details className="p-4 group">
-          <summary className="relative cursor-pointer list-none pr-8 font-medium text-slate-700 transition-colors duration-300 focus-visible:outline-none group-hover:text-slate-900  [&::-webkit-details-marker]:hidden">
+          <summary className="relative cursor-pointer list-none pr-8 font-medium text-slate-700 transition-colors duration-300 focus-visible:outline-none dark:text-white  [&::-webkit-details-marker]:hidden">
             What is Node? How does Node work
             <svg
               xmlns="http://www.w3.org/2000/svg"

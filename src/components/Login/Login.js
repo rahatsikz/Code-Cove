@@ -83,11 +83,13 @@ const Login = () => {
   };
 
   return (
-    <div className="bg-gray-50 min-h-[90.8vh] flex items-center justify-center">
-      <div className="bg-gray-100 flex rounded-2xl shadow-lg max-w-4xl p-5 items-center">
+    <div className="bg-gray-50 dark:bg-gray-800 min-h-[90.8vh] flex items-center justify-center">
+      <div className="bg-gray-100 dark:bg-gray-900 flex rounded-2xl shadow-lg max-w-4xl p-5 items-center">
         <div className="md:w-1/2 px-8 md:px-16 text-center">
-          <h2 className="font-bold text-2xl text-[#002D74]">Login</h2>
-          <p className="text-xs mt-4 text-[#002D74]">
+          <h2 className="font-bold dark:text-white text-2xl text-[#002D74]">
+            Login
+          </h2>
+          <p className="text-xs mt-4 text-[#002D74] dark:text-white">
             If you are already a member, easily log in
           </p>
 
@@ -209,7 +211,7 @@ const Login = () => {
             Login with Github
           </button>
 
-          <div className="mt-5 text-xs border-b border-[#002D74] py-4 text-[#002D74]">
+          <div className="mt-5 text-xs border-b dark:text-white dark:border-white border-[#002D74] py-4 text-[#002D74]">
             <button
               onClick={handleReset}
               className="inline-flex items-center justify-center h-10 gap-2 px-5 text-sm font-medium tracking-wide transition duration-300 rounded focus-visible:outline-none justify-self-center whitespace-nowrap  hover:bg-sky-50 hover:text-sky-600 focus:bg-sky-100 focus:text-sky-700 disabled:cursor-not-allowed disabled:text-sky-300 disabled:shadow-none disabled:hover:bg-transparent"
@@ -218,8 +220,8 @@ const Login = () => {
             </button>
           </div>
 
-          <div className="mt-3 text-xs flex justify-between items-center text-[#002D74]">
-            <p>Don't have an account?</p>
+          <div className="mt-3 text-xs flex justify-between items-center text-[#002D74] ">
+            <p className="dark:text-white">Don't have an account?</p>
             <Link to="/register">
               <button className="py-2 px-5 bg-white border rounded-xl hover:scale-110 ">
                 Register

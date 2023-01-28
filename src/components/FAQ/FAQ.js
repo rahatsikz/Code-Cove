@@ -3,7 +3,7 @@ import React from "react";
 const FAQ = () => {
   return (
     <div>
-      <div className="bg-slate-50 h-[90.8vh]">
+      <div className="bg-slate-50 dark:bg-gray-800 h-[90.8vh]">
         <div className="w-4/5 xl:w-1/2 mx-auto p-12">
           <p className="text-center mb-8 text-xl font-bold">
             Frequently Asked Question
@@ -11,7 +11,7 @@ const FAQ = () => {
 
           <div className="collapse collapse-arrow">
             <input type="checkbox" className="peer" />
-            <div className="collapse-title bg-white text-stone-500 peer-checked:bg-white peer-checked:text-stone-500">
+            <div className="collapse-title bg-white dark:bg-gray-900 dark:text-white text-stone-500 peer-checked:bg-white dark:peer-checked:bg-gray-900 dark:peer-checked:text-white peer-checked:text-stone-500">
               What does it take to be a web developer?
             </div>
             <div className="collapse-content bg-sky-400 my-4 text-primary-content peer-checked:bg-sky-400 peer-checked:text-secondary-content">
@@ -27,7 +27,7 @@ const FAQ = () => {
 
           <div className="collapse collapse-arrow">
             <input type="checkbox" className="peer" />
-            <div className="collapse-title bg-white text-stone-500 peer-checked:bg-white peer-checked:text-stone-500">
+            <div className="collapse-title bg-white dark:bg-gray-900 dark:text-white text-stone-500 peer-checked:bg-white dark:peer-checked:bg-gray-900 dark:peer-checked:text-white peer-checked:text-stone-500">
               How many months does it take to learn coding?
             </div>
             <div className="collapse-content bg-sky-400 my-4 text-primary-content peer-checked:bg-sky-400 peer-checked:text-secondary-content">
@@ -43,7 +43,7 @@ const FAQ = () => {
 
           <div className="collapse collapse-arrow">
             <input type="checkbox" className="peer" />
-            <div className="collapse-title bg-white text-stone-500 peer-checked:bg-white peer-checked:text-stone-500">
+            <div className="collapse-title bg-white dark:bg-gray-900 dark:text-white text-stone-500 peer-checked:bg-white dark:peer-checked:bg-gray-900 dark:peer-checked:text-white peer-checked:text-stone-500">
               What is the benefit of learning coding?
             </div>
             <div className="collapse-content bg-sky-400 my-4 text-primary-content peer-checked:bg-sky-400 peer-checked:text-secondary-content">

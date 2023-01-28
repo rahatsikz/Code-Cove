@@ -9,7 +9,7 @@ const IndividualCourse = ({ course }) => {
     navigate(`/details/${id}`);
   };
   return (
-    <div className="flex flex-col overflow-hidden bg-white rounded shadow-md text-slate-500 shadow-slate-200 sm:flex-row my-4">
+    <div className="flex flex-col overflow-hidden dark:bg-gray-900 dark:text-white bg-white rounded shadow-md text-slate-500 dark:shadow-black shadow-slate-200 sm:flex-row my-4">
       {/*  <!-- Image --> */}
       <figure className="flex-1">
         <img
@@ -22,7 +22,9 @@ const IndividualCourse = ({ course }) => {
       <div className="flex-1 p-6 sm:mx-6 sm:px-0">
         <header className="flex gap-4 mb-4">
           <div>
-            <h3 className="text-xl font-medium text-slate-700">{name}</h3>
+            <h3 className="text-xl font-medium dark:text-white text-slate-700">
+              {name}
+            </h3>
             <p className="text-lg text-sky-400 mt-2 font-semibold"> {price} </p>
           </div>
         </header>
@@ -52,7 +54,7 @@ const IndividualCourse = ({ course }) => {
           <div className="mt-2">
             <button
               onClick={handleDetails}
-              className="inline-flex h-10 items-center justify-center gap-2 justify-self-center whitespace-nowrap rounded-full bg-sky-50 px-5 text-sm font-medium tracking-wide text-sky-500 shadow-md shadow-sky-100 transition duration-300 hover:bg-sky-100 hover:text-sky-600 hover:shadow-md hover:shadow-sky-100 focus:bg-sky-200 focus:text-sky-700 focus:shadow-md focus:shadow-sky-100 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-sky-100 disabled:bg-sky-100 disabled:shadow-none"
+              className="inline-flex h-10 items-center justify-center gap-2 justify-self-center whitespace-nowrap rounded-full dark:bg-gray-800 bg-sky-50 px-5 text-sm font-medium tracking-wide text-sky-500 shadow-md dark:shadow-black shadow-sky-100 transition duration-300 hover:bg-sky-100 hover:text-sky-600 hover:shadow-md hover:shadow-sky-100 focus:bg-sky-200 focus:text-sky-700 focus:shadow-md focus:shadow-sky-100 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-sky-100 disabled:bg-sky-100 disabled:shadow-none"
             >
               <span>Course Details</span>
             </button>

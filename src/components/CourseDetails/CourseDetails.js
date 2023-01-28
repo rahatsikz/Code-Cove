@@ -56,9 +56,9 @@ const CourseDetails = () => {
           </div>
         </div>
 
-        <div className="overflow-hidden xl:col-span-4 col-span-12 bg-white rounded shadow-lg  text-slate-500 shadow-slate-200">
+        <div className="overflow-hidden xl:col-span-4 col-span-12 bg-white dark:bg-gray-900 rounded shadow-lg dark:text-white  text-slate-500 dark:shadow-black shadow-slate-200">
           <div className="p-12">
-            <h2 className="text-center my-4 text-black font-semibold text-2xl">
+            <h2 className="text-center my-4 dark:text-white text-black font-semibold text-2xl">
               Course info:
             </h2>
             <div className="flex justify-between border-b-2 w-4/5 pb-2 mx-auto mt-4">
@@ -87,11 +87,10 @@ const CourseDetails = () => {
             <div className="text-center my-8">
               <button
                 onClick={handleAccess}
-                className="inline-flex h-10 items-center justify-center gap-2 whitespace-nowrap rounded border border-sky-500 px-5 text-sm font-medium tracking-wide text-sky-500 shadow-md shadow-sky-200 transition duration-300 hover:border-sky-600 hover:text-sky-600 hover:shadow-sm hover:shadow-sky-200 focus:border-sky-700 focus:text-sky-700 focus:shadow-sm focus:shadow-sky-200 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-sky-300 disabled:text-sky-300 disabled:shadow-none"
+                className="inline-flex h-10 items-center justify-center gap-2 whitespace-nowrap rounded border border-sky-500 px-5 text-sm font-medium tracking-wide text-sky-500 shadow-md dark:shadow-black shadow-sky-200 transition duration-300 hover:border-sky-600 hover:text-sky-600 hover:shadow-sm hover:shadow-sky-200 focus:border-sky-700 focus:text-sky-700 focus:shadow-sm focus:shadow-sky-200 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-sky-300 disabled:text-sky-300 disabled:shadow-none"
               >
                 <span>
-                  {" "}
-                  <FaLock />{" "}
+                  <FaLock />
                 </span>
                 <span>Get Premium Access</span>
               </button>

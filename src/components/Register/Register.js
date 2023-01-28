@@ -59,8 +59,8 @@ const Register = () => {
   };
 
   return (
-    <div className="bg-gray-50 min-h-[90.8vh] flex items-center justify-center">
-      <div className="bg-gray-100 flex rounded-2xl shadow-lg max-w-4xl p-5 items-center">
+    <div className="bg-gray-50 dark:bg-gray-800 min-h-[90.8vh] flex items-center justify-center">
+      <div className="bg-gray-100 flex dark:bg-gray-900 rounded-2xl shadow-lg max-w-4xl p-5 items-center">
         <div className="md:block hidden w-1/2">
           <img
             className="rounded-2xl"
@@ -70,8 +70,10 @@ const Register = () => {
         </div>
 
         <div className="md:w-1/2 px-8 md:px-16 text-center">
-          <h2 className="font-bold text-2xl text-[#002D74]">Sign Up</h2>
-          <p className="text-xs mt-4 text-[#002D74]">
+          <h2 className="font-bold text-2xl dark:text-white text-[#002D74]">
+            Sign Up
+          </h2>
+          <p className="text-xs mt-4 dark:text-white text-[#002D74]">
             Sign up now to access exclusive features and content!
           </p>
 
@@ -166,7 +168,7 @@ const Register = () => {
           <p className="text-center text-red-400 mt-4">{error}</p>
 
           <div className="mt-3 text-xs flex justify-between items-center text-[#002D74]">
-            <p>Already a member ?</p>
+            <p className="dark:text-white">Already a member ?</p>
             <Link to="/login">
               <button className="py-2 px-5 bg-white border rounded-xl hover:scale-110">
                 Login

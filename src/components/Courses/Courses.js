@@ -20,10 +20,10 @@ const Courses = () => {
   return (
     <div className="grid grid-cols-12 container mx-auto">
       <div className="col-span-12 lg:col-span-4">
-        <div className="bg-sky-50 text-center my-8 rounded-lg">
+        <div className="bg-sky-50 dark:bg-gray-900 dark:text-white text-center my-8 rounded-lg">
           <h2 className="text-xl font-semibold mb-4 pt-4">Filter by levels</h2>
           <div
-            className="form-control pl-8 pb-8"
+            className="form-control pl-8 pb-8 "
             onChange={handleCategoryChange}
           >
             <label className="flex items-center cursor-pointer mt-4">
@@ -33,7 +33,7 @@ const Courses = () => {
                 className="radio radio-info"
                 value=""
               />
-              <span className="label-text ml-2">All</span>
+              <span className="label-text ml-2 dark:text-white">All</span>
             </label>
             <label className="flex items-center cursor-pointer mt-4">
               <input
@@ -42,7 +42,7 @@ const Courses = () => {
                 className="radio radio-info"
                 value="Beginner"
               />
-              <span className="label-text ml-2">Beginner</span>
+              <span className="label-text ml-2 dark:text-white">Beginner</span>
             </label>
             <label className="flex items-center cursor-pointer mt-4">
               <input
@@ -51,7 +51,9 @@ const Courses = () => {
                 className="radio radio-info"
                 value="Intermediate"
               />
-              <span className="label-text ml-2">Intermediate</span>
+              <span className="label-text ml-2 dark:text-white">
+                Intermediate
+              </span>
             </label>
             <label className="flex items-center cursor-pointer mt-4">
               <input
@@ -60,12 +62,12 @@ const Courses = () => {
                 className="radio radio-info"
                 value="Advanced"
               />
-              <span className="label-text ml-2">Advanced</span>
+              <span className="label-text ml-2 dark:text-white">Advanced</span>
             </label>
           </div>
         </div>
 
-        <div className="bg-sky-50 text-center my-8 rounded-lg">
+        <div className="bg-sky-50 dark:bg-gray-900 text-center my-8 rounded-lg">
           <h3 className="text-xl font-semibold mb-4 pt-4 text-center">
             Go to Course details of:
           </h3>
