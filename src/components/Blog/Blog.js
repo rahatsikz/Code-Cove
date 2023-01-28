@@ -29,17 +29,20 @@ const Blog = () => {
             </svg>
           </summary>
           <p className="mt-4 text-slate-500">
-            Tailwind CSS works by scanning all of your HTML files, JavaScript
-            components, and any other templates for className names, generating
-            the corresponding styles and then writing them to a static CSS file.
+            Cross-origin resource sharing (CORS) is a browser mechanism which
+            enables controlled access to resources located outside of a given
+            domain. It extends and adds flexibility to the same-origin policy .
+            However, it also provides potential for cross-domain attacks, if a
+            website's CORS policy is poorly configured and implemented
           </p>
         </details>
         <details className="p-4 group">
           <summary className="relative cursor-pointer list-none pr-8 font-medium text-slate-700 transition-colors duration-300 focus-visible:outline-none group-hover:text-slate-900  [&::-webkit-details-marker]:hidden">
-            How do I install TailwindCSS?
+            Why are you using firebase? What other options do you have to
+            implement authentication?
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="absolute right-0 w-4 h-4 transition duration-300 top-1 shrink-0 stroke-slate-700 group-open:rotate-45"
+              className="absolute right-0 w-4 h-4 transition duration-300 top-1 shrink-0 stroke-sky-400 group-open:rotate-45"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -58,19 +61,20 @@ const Blog = () => {
             </svg>
           </summary>
           <p className="mt-4 text-slate-500">
-            The simplest and fastest way to get up and running with Tailwind CSS
-            from scratch is with the Tailwind CLI tool. The CLI is also
-            available as a standalone executable if you want to use it without
-            installing Node.js. Install tailwindcss via npm, and create your
-            tailwind.config.js file.
+            We are using firebase because its Authentication provides backend
+            services, easy-to-use SDKs, and ready-made UI libraries to
+            authenticate users to our site. It supports authentication using
+            passwords, phone numbers, popular federated identity providers like
+            Google, Facebook and Twitter. We have some other options although.
+            Such as Auth0, Okta, MongoDB
           </p>
         </details>
         <details className="p-4 group">
           <summary className="relative cursor-pointer list-none pr-8 font-medium text-slate-700 transition-colors duration-300 focus-visible:outline-none group-hover:text-slate-900  [&::-webkit-details-marker]:hidden">
-            What is Wind UI about?
+            How does the private route work?
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="absolute right-0 w-4 h-4 transition duration-300 top-1 shrink-0 stroke-slate-700 group-open:rotate-45"
+              className="absolute right-0 w-4 h-4 transition duration-300 top-1 shrink-0 stroke-sky-400 group-open:rotate-45"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -89,17 +93,18 @@ const Blog = () => {
             </svg>
           </summary>
           <p className="mt-4 text-slate-500">
-            Expertly made, responsive, accessible components in React and HTML
-            ready to be used on your website or app. Just copy and paste them on
-            your Tailwind CSS project.
+            The react private route component renders child components (
+            children ) if the user is logged in. If not logged in the user is
+            redirected to the /login page with the return url passed in the
+            location state property.
           </p>
         </details>
         <details className="p-4 group">
           <summary className="relative cursor-pointer list-none pr-8 font-medium text-slate-700 transition-colors duration-300 focus-visible:outline-none group-hover:text-slate-900  [&::-webkit-details-marker]:hidden">
-            How do I use Wind UI components?
+            What is Node? How does Node work
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="absolute right-0 w-4 h-4 transition duration-300 top-1 shrink-0 stroke-slate-700 group-open:rotate-45"
+              className="absolute right-0 w-4 h-4 transition duration-300 top-1 shrink-0 stroke-sky-400 group-open:rotate-45"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -118,10 +123,12 @@ const Blog = () => {
             </svg>
           </summary>
           <p className="mt-4 text-slate-500">
-            All components can be copied and pasted and easily implemented in
-            your tailwind css projects. You can choose which language you want
-            to copy the desired component and just hover and click on the
-            component you need and paste it on your project.
+            Node.js (Node) is an open-source backend javascript runtime
+            environment. It is used as backend service where javascript works on
+            the server-side of the application. This way javascript is used on
+            both frontend and backend. Node.js runs on chrome v8 engine which
+            converts javascript code into machine code, it is highly scalable,
+            lightweight, fast, and data-intensive.
           </p>
         </details>
       </div>
