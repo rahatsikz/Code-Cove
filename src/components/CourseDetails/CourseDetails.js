@@ -8,6 +8,13 @@ import {
 } from "react-icons/fa";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import Footer from "../Footer/Footer";
+import Pdf from "react-to-pdf";
+const ref = React.createRef();
+const options = {
+  orientation: "landscape",
+  unit: "px",
+  format: [2140, 1280],
+};
 
 const CourseDetails = () => {
   const detailsData = useLoaderData();
@@ -28,7 +35,7 @@ const CourseDetails = () => {
     navigate(`/checkout/${id}`);
   };
   return (
-    <div>
+    <div ref={ref}>
       <div
         className="hero min-h-[70vh]"
         style={{
@@ -40,6 +47,23 @@ const CourseDetails = () => {
           <div className="max-w-lg">
             <h1 className="mb-5 text-5xl font-bold"> {name} </h1>
             <p className="mb-5">{description}</p>
+            <Pdf
+              targetRef={ref}
+              filename="code-details.pdf"
+              options={options}
+              x={0.5}
+              y={0.5}
+              scale={2}
+            >
+              {({ toPdf }) => (
+                <button
+                  onClick={toPdf}
+                  className="inline-flex h-10 items-center justify-center gap-2 whitespace-nowrap rounded border border-white px-5 text-sm font-medium tracking-wide text-white transition duration-300 focus-visible:outline-none disabled:cursor-not-allowed "
+                >
+                  <span>Get Details in pdf</span>
+                </button>
+              )}
+            </Pdf>
           </div>
         </div>
       </div>
