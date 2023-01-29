@@ -25,14 +25,16 @@ export const router = createBrowserRouter([
         path: "courses",
         element: <Courses></Courses>,
         loader: () => {
-          return fetch("http://localhost:5000/courses");
+          return fetch("https://code-cove-server.vercel.app/courses");
         },
       },
       {
         path: "/details/:id",
         element: <CourseDetails></CourseDetails>,
         loader: ({ params }) => {
-          return fetch(`http://localhost:5000/details/${params.id}`);
+          return fetch(
+            `https://code-cove-server.vercel.app/details/${params.id}`
+          );
         },
       },
       {
@@ -63,7 +65,9 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) => {
-          return fetch(`http://localhost:5000/details/${params.id}`);
+          return fetch(
+            `https://code-cove-server.vercel.app/details/${params.id}`
+          );
         },
       },
     ],
