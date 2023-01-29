@@ -148,7 +148,7 @@ const Header = () => {
 
             {user?.uid ? (
               <Link
-                to="/"
+                to="/profile"
                 className="relative inline-flex h-10 w-10 items-center justify-center rounded-full text-white"
               >
                 <img

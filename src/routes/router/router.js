@@ -7,6 +7,7 @@ import ErrorPage from "../../components/ErrorPage/ErrorPage";
 import FAQ from "../../components/FAQ/FAQ";
 import Home from "../../components/Home/Home";
 import Login from "../../components/Login/Login";
+import Profile from "../../components/Profile/Profile";
 import Register from "../../components/Register/Register";
 import Main from "../../layouts/Main";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
@@ -49,6 +50,10 @@ export const router = createBrowserRouter([
       {
         path: "register",
         element: <Register></Register>,
+      },
+      {
+        path: "profile",
+        element: <Profile></Profile>,
       },
       {
         path: "/checkout/:id",
