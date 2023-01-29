@@ -7,6 +7,7 @@ import {
   FaRegFileAlt,
 } from "react-icons/fa";
 import { useLoaderData, useNavigate } from "react-router-dom";
+import Footer from "../Footer/Footer";
 
 const CourseDetails = () => {
   const detailsData = useLoaderData();
@@ -98,6 +99,7 @@ const CourseDetails = () => {
           </div>
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 };

@@ -1,10 +1,11 @@
 import React from "react";
+import Footer from "../Footer/Footer";
 
 const Blog = () => {
   return (
     <div>
       <h2 className="text-center text-2xl font-bold my-8">Blogs</h2>
-      <div className="w-2/3 mx-auto divide-y rounded divide-slate-200 ">
+      <div className="w-2/3 mx-auto divide-y rounded divide-slate-200 h-[70vh] ">
         <details className="p-4 group" open>
           <summary className="relative cursor-pointer list-none pr-8 font-medium text-slate-700 transition-colors duration-300 focus-visible:outline-none dark:text-white  [&::-webkit-details-marker]:hidden">
             What is CORS ?
@@ -132,6 +133,7 @@ const Blog = () => {
           </p>
         </details>
       </div>
+      <Footer></Footer>
     </div>
   );
 };

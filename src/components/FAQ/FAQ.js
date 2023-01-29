@@ -1,9 +1,10 @@
 import React from "react";
+import Footer from "../Footer/Footer";
 
 const FAQ = () => {
   return (
     <div>
-      <div className="bg-slate-50 dark:bg-gray-800 h-[90.8vh]">
+      <div className="bg-slate-50 dark:bg-gray-800 h-[80.8vh]">
         <div className="w-4/5 xl:w-1/2 mx-auto p-12">
           <p className="text-center mb-8 text-xl font-bold">
             Frequently Asked Question
@@ -59,6 +60,7 @@ const FAQ = () => {
           </div>
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 };
